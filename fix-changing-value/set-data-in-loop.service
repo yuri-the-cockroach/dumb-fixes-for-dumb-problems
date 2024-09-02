@@ -1,0 +1,10 @@
+[Unit]
+Description=Watch data for change and set it back
+After=greetd.service # Change to whatever your greeter is... Or just remove it, you should know better...
+
+[Service]
+ExecStart=sh -c '%h/.local/bash/watch-and-set.sh' # Replace the path with the location of this script on your machine
+Restart=on-failure
+
+[Install]
+WantedBy=default.target
